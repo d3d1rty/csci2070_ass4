@@ -23,7 +23,7 @@ public class RichardDavisGuessingGameGUI extends JFrame
   private final int WINDOW_HEIGHT = 300;
 
   /**
-   * This method instantiates a SavingsAccount object a default balance of 0
+   * This method instantiates a RichardDavisGuessingGame object
    *
    */
   public RichardDavisGuessingGameGUI()
@@ -52,15 +52,26 @@ public class RichardDavisGuessingGameGUI extends JFrame
    */
   private void buildPanel()
   {
+    // creates labels
     introLabel = new JLabel("I have a number between 1 and 2000. Can you guess my number?");
     guessLabel = new JLabel("Enter your first guess");
-    numberTextField = new JTextField(5);
     hintLabel = new JLabel("");
+
+    //creates text field
+    numberTextField = new JTextField(5);
+
+    // creates guess button and event listener
     guessButton = new JButton("Guess");
     guessButton.addActionListener(new GuessButtonListener());
+
+    // creates retry button and event listener
     retryButton = new JButton("Retry");
     retryButton.addActionListener(new RetryButtonListener());
+
+    // creates panel
     panel = new JPanel();
+
+    // adds components to panel
     panel.add(introLabel);
     panel.add(guessLabel);
     panel.add(numberTextField);
