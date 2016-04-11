@@ -7,7 +7,7 @@ public class RichardDavisSavingsDemo
   public static void main(String args[])
   {
     // initializes first two test accounts
-    System.out.println("Initializing first two test accounts...");
+    System.out.println("Initializing two test accounts...");
     RichardDavisSavingsAccount acct1 = new RichardDavisSavingsAccount(.05, 5000.0);
     System.out.printf("First account: Balance = $%8.2f, Annual Rate = %3.2f\n", acct1.getBalance(), acct1.getRate());
     RichardDavisSavingsAccount acct2 = new RichardDavisSavingsAccount(.05, 2500.0);
