@@ -10,6 +10,7 @@ public class RichardDavisCalculator extends JFrame
 {
   double numOne;
   double numTwo;
+
   // swing components
   private JPanel panel;
   private CalcButtonPanel buttonPanel;
@@ -18,7 +19,7 @@ public class RichardDavisCalculator extends JFrame
   private final int WINDOW_HEIGHT = 300;
 
   /**
-   * This method instantiates a SavingsAccount object a default balance of 0
+   * This method instantiates a RichardDavisCalculator object
    *
    */
   public RichardDavisCalculator()
@@ -55,19 +56,23 @@ public class RichardDavisCalculator extends JFrame
   }
 
   /**
-   * This class instantiates a button panel
+   * This class instantiates a CalcButtonPanel object
    *
    */
   public class CalcButtonPanel extends JPanel
   {
+    // operands and results
     private double numOne;
     private double numTwo;
     private double result;
+    // holds digits for numbers
     private String strBuffer = "";
+    // determines what operation to perform
     private boolean divide = false;
     private boolean multiply = false;
     private boolean subtract = false;
     private boolean add = false;
+    // swing components
     private JButton oneButton;
     private JButton twoButton;
     private JButton threeButton;
@@ -349,7 +354,10 @@ public class RichardDavisCalculator extends JFrame
        */
       public void actionPerformed(ActionEvent e)
       {
+        // sets value for numTwo parsed from strBuffer
         numTwo = Double.parseDouble(strBuffer);
+        // determines which operation selected by user
+        // performs selected operation and prevents division by 0
         if (divide) {
           if (numOne == 0 || numTwo == 0) {
             numberTextField.setText("ERROR: Cannot divide by 0!");
@@ -367,6 +375,7 @@ public class RichardDavisCalculator extends JFrame
           result = numOne + numTwo;
           numberTextField.setText(numOne + " + " + numTwo + " = " + result);
         }
+        // resets strBuffer to read another value
         strBuffer = "";
       }
     }
